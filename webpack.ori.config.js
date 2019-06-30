@@ -1,19 +1,22 @@
 const path = require('path');
-const webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: "production",
+
   // devtool: "source-map",
-  entry: "./src/experiments",
+
+  entry: "./src",
+
   output: {
     filename: "output.js",
     chunkFilename: '[name].chunk.js',
     path: path.resolve(__dirname, 'dist')
   },
+
   optimization: {
     // usedExports: true,
-    
+
     // splitChunks: {
     //   chunks: 'all'
     // }
@@ -39,5 +42,6 @@ module.exports = {
     //   },
     // },
   },
+
   plugins: [new HtmlWebpackPlugin()]
 };
